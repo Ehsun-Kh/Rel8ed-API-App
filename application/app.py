@@ -365,6 +365,7 @@ def queryWDLLM(
     wd_columns = request.wd_columns
     wd_version = request.wd_version
     llm_instructions = request.llm_instructions
+    num_docs = request.num_docs
     
 
     # Sanity check for instructions
@@ -420,7 +421,7 @@ def queryWDLLM(
         project_id=project_id,
         collection_ids=[collection_id],
         natural_language_query=question,
-        count = 5
+        count = num_docs
     ).get_result()
 
     wd_contexts = []
