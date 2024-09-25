@@ -441,8 +441,12 @@ def queryWDLLM(
 
     return queryWDLLMResponse(**data_response)
 
-def get_custom_prompt(llm_instructions, wd_contexts, query_str):#
-    context_str = "\n".join(wd_contexts)
+def get_custom_prompt(llm_instructions, wd_contexts, query_str):
+    # Convert each dictionary in wd_contexts to a string
+    context_str_list = [str(context) for context in wd_contexts]
+    
+    # Join the strings with newlines
+    context_str = "\n".join(context_str_list)
 
     # Replace the placeholders in llm_instructions with the actual query and context
     prompt = llm_instructions.replace("{query_str}", query_str).replace("{context_str}", context_str)
