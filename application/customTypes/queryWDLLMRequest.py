@@ -25,7 +25,7 @@ class Parameters(BaseModel):
         return params_dict
 
 class LLMParams(BaseModel):
-    model_id: str = "meta-llama/llama-3-70b-instruct"
+    model_id: str = "ibm/granite-13b-instruct-v2"
     inputs: list = []
     parameters: Parameters = Parameters()
 
