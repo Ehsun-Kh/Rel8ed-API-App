@@ -135,7 +135,7 @@
             "model_id": {
               "type": "string",
               "title": "Model Id",
-              "default": "meta-llama/llama-3-70b-instruct"
+              "default": "ibm/granite-13b-instruct-v2"
             },
             "inputs": {
               "type": "array",
